@@ -3,6 +3,12 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/sideMenu.css')
+    link(rel='stylesheet', href='/stylesheets/addBook.css')
+    script(type='text/javascript' src='/javascripts/jquery-2.2.0.min.js')
+    script(type='text/javascript' src='/javascripts/addBooks.js')
     include header.jade
   body
-    block content
+    div(class="sideMenuContainer")
+      include sideMenu.jade
+      block content

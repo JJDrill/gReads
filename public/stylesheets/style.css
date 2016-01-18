@@ -24,13 +24,18 @@ a {
   margin: 0;
 }
 
+.sideMenuContainer {
+  display: flex;
+  flex-direction: row;
+}
+
 .bookImage {
   width: 140px;
   padding-right: 10%;
 }
 
 .bookContainer {
-  width: 50%;
+  width: 600px;
   display: flex;
   flex-direction: row;
   margin-bottom: 15px;

@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  main
+    form(action='/books/new',method='post')
+      div(class="addBookContainer")
+        label(class="addBookLabel") Title
+        p
+          input(class="addBookInput", name='title', type='text')
+        label(class="addBookLabel") Genre
+        p
+          input(class="addBookInput", name='genre', type='text')
+        label(class="addBookLabel") Cover Image URL
+        p
+          input(class="addBookInput", name='coverImageUrl', type='text')
+        label(class="addBookLabel") Description
+        p
+          textarea(class="addBookInput", name='description')
+        button(class="addBookButton", type="submit", value="submit") Add Book

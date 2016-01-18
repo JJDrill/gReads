@@ -1,0 +1,26 @@
+
+.navListContainer {
+  margin-right: 50px;
+}
+
+.navAuthorsContainer, .navBooksContainer {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  border: 1px solid;
+  height: 35vh;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+.navMenuHeaders {
+  transform: rotate(-90deg);
+  margin-top: 100px;
+}
+
+.navListItem {
+  list-style-type: none;
+}

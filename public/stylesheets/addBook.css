@@ -1,0 +1,28 @@
+.addBookContainer {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.addBookLabel {
+  font-size: 80%;
+}
+
+.addBookInput {
+  width: 100%;
+  border: 1px solid;
+  font-size: 125%;
+}
+
+.addBookContainer > p > textarea {
+  height: 100px;
+}
+
+.addBookButton {
+  height: 50px;
+}
+
+.bookImage {
+  height: 50px;
+  width: 50px;
+}
