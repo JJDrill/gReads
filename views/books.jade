@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  each item in pageData.bookList
+    div(class="bookContainer")
+      div(class="bookContainerImage")
+        img(class="bookImage", src= item.Book_Cover_URL)
+      div(class="bookContainerInfo")
+        div(class="bookContainerTitleGenreButtons")
+          div(class="bookContainerTitleGenre")
+            h3(class="bookTitle") #{item.Title}
+            h4(class="bookGenre") #{item.Genre}
+          div(class="bookContainerButtons")
+            button(class="bookButtons", type="submit", value="save") Edit
+            button(class="bookButtons", type="submit", value="save") Remove
+        div
+          h4 #{item.Description}
