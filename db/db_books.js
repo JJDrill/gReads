@@ -19,6 +19,11 @@ function addBook(title, genre, coverImageUrl, description){
   }, 'id')
 };
 
+function deleteBook(id){
+  return Books()
+         .where('id', id)
+         .del()
+};
 
 module.exports = {
   Get_Book_List: function(orderByField, orderByDirection){
@@ -27,5 +32,9 @@ module.exports = {
 
   Add_Book: function(title, genre, coverImageUrl, description){
     return addBook(title, genre, coverImageUrl, description)
+  },
+
+  Delete_Book: function(id){
+    return deleteBook(id)
   }
 }

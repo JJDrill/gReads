@@ -22,4 +22,12 @@ router.post('/new', function(req, res){
   })
 });
 
+router.get('/delete/:id', function(req, res){
+console.log('found router', req.params.id);
+  db_Books.Delete_Book(req.params.id)
+  .then(function(){
+    res.redirect('/books/list');
+  })
+});
+
 module.exports = router;

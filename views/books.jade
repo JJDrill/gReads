@@ -3,7 +3,7 @@ extends layout
 block content
   main
     each item in pageData.bookList
-      div(class="bookContainer")
+      div(class="bookContainer", id=item.id)
         div(class="bookContainerImage")
           img(class="bookImage", src= item.Book_Cover_URL)
         div(class="bookContainerInfo")
@@ -12,7 +12,7 @@ block content
               h3(class="bookTitle") #{item.Title}
               h4(class="bookGenre") #{item.Genre}
             div(class="bookContainerButtons")
-              button(class="bookButtons", type="submit", value="save") Edit
-              button(class="bookButtons", type="submit", value="save") Remove
+              button(class="bookButtons", name="btnEditBook") Edit
+              button(class="bookButtons", name="btnRemoveBook") Remove
           div
             h4 #{item.Description}
