@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  main
+    form(action='./edit', method='post')
+      div(class="addBookContainer")
+        input(class="addBookInput", name='bookId', type='hidden', value=bookId)
+        label(class="addBookLabel") Title
+        p
+          input(class="addBookInput", name='title', type='text', value=bookTitle)
+        label(class="addBookLabel") Genre
+        p
+          input(class="addBookInput", name='genre', type='text', value=bookGenre)
+        label(class="addBookLabel") Cover Image URL
+        p
+          input(class="addBookInput", name='coverImageUrl', type='text', value=bookImage)
+        label(class="addBookLabel") Description
+        p
+          textarea(class="addBookInput", name='description') #{bookDescription}
+        button(class="saveBookChanges, btnEditSaveBook", type="submit", value="submit") Save Changes

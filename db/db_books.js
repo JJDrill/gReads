@@ -10,6 +10,10 @@ function getBookList(orderByField, orderByDirection){
   return Books().select().orderBy(orderByField, orderByDirection)
 };
 
+function getBook(id){
+  return Books().where('id', id).select().first()
+};
+
 function addBook(title, genre, coverImageUrl, description){
   return Books().insert({
     Title: title,
@@ -25,9 +29,24 @@ function deleteBook(id){
          .del()
 };
 
+function updateBook(id, title, genre, coverImageUrl, description){
+  return Books()
+         .where('id', id)
+         .update({
+           Title: title,
+           Genre: genre,
+           Book_Cover_URL: coverImageUrl,
+           Description: description
+         })
+};
+
 module.exports = {
   Get_Book_List: function(orderByField, orderByDirection){
     return getBookList(orderByField, orderByDirection)
+  },
+
+  Get_Book: function(id){
+    return getBook(id)
   },
 
   Add_Book: function(title, genre, coverImageUrl, description){
@@ -36,5 +55,9 @@ module.exports = {
 
   Delete_Book: function(id){
     return deleteBook(id)
+  },
+
+  Update_Book: function(id, title, genre, coverImageUrl, description){
+    return updateBook(id, title, genre, coverImageUrl, description)
   }
 }

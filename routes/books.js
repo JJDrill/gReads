@@ -23,8 +23,30 @@ router.post('/new', function(req, res){
 });
 
 router.get('/delete/:id', function(req, res){
-console.log('found router', req.params.id);
   db_Books.Delete_Book(req.params.id)
+  .then(function(){
+    res.redirect('/books/list');
+  })
+});
+
+router.get('/:id/edit', function(req, res){
+  db_Books.Get_Book(req.params.id).then(function(book){
+    res.render('editBook', {
+      bookId: book.id,
+      bookTitle: book.Title,
+      bookGenre: book.Genre,
+      bookImage: book.Book_Cover_URL,
+      bookDescription: book.Description
+    });
+  })
+});
+
+router.post('/:id/edit', function(req, res){
+  db_Books.Update_Book(req.body.bookId,
+                    req.body.title,
+                    req.body.genre,
+                    req.body.coverImageUrl,
+                    req.body.description)
   .then(function(){
     res.redirect('/books/list');
   })
