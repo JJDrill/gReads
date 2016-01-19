@@ -1,0 +1,26 @@
+.indexContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.authorsContainer, .booksContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.indexAuthorImage {
+  height: 70%;
+  width: 60%;
+}
+
+.indexBookImage {
+  height: 50%;
+  width: 60%;
+}
+
+a {
+  display: flex;
+  justify-content: center;
+}

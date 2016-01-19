@@ -1,5 +1,16 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+doctype html
+html
+  head
+    link(rel='stylesheet', href='/stylesheets/index.css')
+  body
+    div(class="indexContainer")
+      div(class="authorsContainer")
+        a(href="/authors/")
+          img(class="indexAuthorImage", src= "/images/famous-authors.jpg")
+        h1
+          a(href="/authors/") Authors
+      div(class="booksContainer")
+        a(href="/books/")
+          img(class="indexBookImage", src= "/images/books.png")
+        h1
+          a(href="/books/") Books
