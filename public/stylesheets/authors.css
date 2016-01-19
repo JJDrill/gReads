@@ -1,0 +1,42 @@
+.authorImage {
+  width: 140px;
+  padding-right: 10%;
+}
+
+.authorContainer {
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+}
+
+.authorContainerInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.authorContainerTitleGenreButtons {
+  display: flex;
+  flex-direction: row;
+}
+
+.authorContainerTitleGenre {
+  width: 70%;
+  align-items: flex-start;
+}
+
+.authorTitle, .authorBio {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.authorContainerButtons {
+  width: 30%;
+  align-items: flex-end;
+}
+
+.authorButtons {
+  width: 50px;
+  height: 30px;
+  padding: 0;
+}

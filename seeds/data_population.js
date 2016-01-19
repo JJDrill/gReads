@@ -1,10 +1,16 @@
 
 exports.seed = function(knex, Promise) {
-  return knex('books').del()
+  return knex('book_authors').del()
   .then(function(){
+    return knex('books').del()
+  }).then(function(){
+    return knex('authors').del()
+  }).then(function(){
     return knex('book_genre').del()
   }).then(function(){
     return knex.raw('ALTER SEQUENCE "books_id_seq" RESTART WITH 1;');
+  }).then(function(){
+    return knex.raw('ALTER SEQUENCE "authors_id_seq" RESTART WITH 1;');
   }).then(function(){
     return knex('book_genre').insert({Genre: 'Python'})
   }).then(function(){
@@ -50,6 +56,88 @@ exports.seed = function(knex, Promise) {
       Genre: 'JavaScript',
       Description: "No matter how much experience you have with JavaScript, odds are you don't fully understand the language. As part of the \"You Don't Know JS\" series, this concise yet in-depth guide focuses on new asynchronous features and performance techniques \"including Promises, generators, and Web Workers\" that let you create sophisticated single-page web applications and escape callback hell in the process.",
       Book_Cover_URL: 'https://s3-us-west-2.amazonaws.com/assessment-images/galvanize_reads/photos/async_and_performance.jpg'
+    });
+  }).then(function(){
+    return knex('authors').insert({
+      First_Name: 'Alex',
+      Last_Name: 'Martelli',
+      Biography: 'Alex Martelli spent 8 years with IBM Research, winning three Outstanding Technical Achievement Awards.He then spent 13 as a Senior Software Consultant at think3 inc, developing libraries, network protocols, GUI engines, event frameworks, and web access frontends. He has also taught programming languages, development methods, and numerical computing at Ferrara University and other venues. He\'s a C++ MVP for Brainbench, and a member of the Python Software Foundation. He currently works for AB Strakt, a Python-centered software house in GÃ¶teborg, Sweden, mostly by telecommuting from his home in Bologna, Italy. Alex\'s proudest achievement is the articles that appeared in Bridge World (January/February 2000), which were hailed as giant steps towards solving issues that had haunted contract bridge theoreticians for decades.',
+      Portrait_URL: 'https://s3-us-west-2.amazonaws.com/assessment-images/galvanize_reads/photos/alex_martelli.jpg'
+    });
+  }).then(function(){
+    return knex('authors').insert({
+      First_Name: 'Allen B.',
+      Last_Name: 'Downey',
+      Biography: 'Allen Downey is a Professor of Computer Science at Olin College of Engineering. He has taught at Wellesley College, Colby College and U.C. Berkeley. He has a Ph.D. in Computer Science from U.C. Berkeley and Master\'s and Bachelor\'s degrees from MIT.',
+      Portrait_URL: 'https://s3-us-west-2.amazonaws.com/assessment-images/galvanize_reads/photos/allen_downey.jpg'
+    });
+  }).then(function(){
+    return knex('authors').insert({
+      First_Name: 'Bonnie',
+      Last_Name: 'Eisenman',
+      Biography: 'Bonnie Eisenman is a software engineer at Codecademy, with previous experience at Fog Creek Software and Google. She has spoken at several conferences on topics ranging from ReactJS to musical programming and Arduinos. In her spare time, she enjoys building electronic musical instruments, tinkering with hardware projects, and laser-cutting chocolate. Find her on Twitter as @brindelle.',
+      Portrait_URL: 'https://s3-us-west-2.amazonaws.com/assessment-images/galvanize_reads/photos/bonnie_eisenman.jpg'
+    });
+  }).then(function(){
+    return knex('authors').insert({
+      First_Name: 'Kyle',
+      Last_Name: 'Simpson',
+      Biography: 'Kyle Simpson is an Open Web Evangelist who\'s passionate about all things JavaScript. He\'s an author, workshop trainer, tech speaker, and OSS contributor/leader.',
+      Portrait_URL: 'https://s3-us-west-2.amazonaws.com/assessment-images/galvanize_reads/photos/kyle_simpson.jpg'
+    });
+  }).then(function(){
+    return knex('authors').insert({
+      First_Name: 'Anna',
+      Last_Name: 'Ravenscroft',
+      Biography: 'Anna Martelli Ravenscroft is an experienced speaker and trainer, with diverse background developing curricula for church, regional transit, disaster preparedness; developing web applications for therapy, learning, fitness; writing technical books, articles and presentations; active member of Open Source community; skilled at translating between IT professionals and end users.',
+      Portrait_URL: 'https://s3-us-west-2.amazonaws.com/assessment-images/galvanize_reads/photos/anna_ravenscroft.jpg'
+    });
+  }).then(function(){
+    return knex('authors').insert({
+      First_Name: 'Steve',
+      Last_Name: 'Holden',
+      Biography: 'Steve Holden Is a consultant, advising clients on system and network architectures and the design and implementation of programmed web systems. He also teaches classes on TCP/IP, network security, database and programming topics, and is the author of "Python Web Programming", the O\'Reilly School of Technology\'s "Certificate series in Python" and O\'Reilly Media\'s "Intermediate Python" video series.',
+      Portrait_URL: 'https://s3-us-west-2.amazonaws.com/assessment-images/galvanize_reads/photos/steve_holden.jpg'
+    });
+  }).then(function(){
+    return knex('book_authors').insert({
+      Book_ID: 1,
+      Author_ID: 1
+    });
+  }).then(function(){
+    return knex('book_authors').insert({
+      Book_ID: 1,
+      Author_ID: 5
+    });
+  }).then(function(){
+    return knex('book_authors').insert({
+      Book_ID: 1,
+      Author_ID: 6
+    });
+  }).then(function(){
+    return knex('book_authors').insert({
+      Book_ID: 2,
+      Author_ID: 2
+    });
+  }).then(function(){
+    return knex('book_authors').insert({
+      Book_ID: 3,
+      Author_ID: 3
+    });
+  }).then(function(){
+    return knex('book_authors').insert({
+      Book_ID: 4,
+      Author_ID: 4
+    });
+  }).then(function(){
+    return knex('book_authors').insert({
+      Book_ID: 5,
+      Author_ID: 4
+    });
+  }).then(function(){
+    return knex('book_authors').insert({
+      Book_ID: 6,
+      Author_ID: 4
     });
   })
 };

@@ -2,7 +2,7 @@ extends layout
 
 block content
   main
-    each item in pageData.bookList
+    each item in pageData.authorList
       div(class="bookContainer", id=item.id)
         div(class="bookContainerImage")
           img(class="bookImage", src= item.Book_Cover_URL)
